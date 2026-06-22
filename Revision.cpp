@@ -188,3 +188,75 @@ public:
         return maxp;
     }
 };
+
+
+
+
+// Matrix 90 degreee
+
+class Solution {
+public:
+    void rotate(vector<vector<int>>& matrix) {
+        for(int i=0;i<matrix.size();i++){
+            for(int j=i+1;j<matrix.size();j++){
+                swap(matrix[i][j],matrix[j][i]);
+            }
+        }
+        for(int i=0;i<matrix.size();i++){
+            reverse(matrix[i].begin(),matrix[i].end());
+        }
+        return;
+    }
+};
+
+
+
+// Subintervals
+
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        sort(intervals.begin(),intervals.end());
+        vector<vector<int>> ans;
+        for(auto inter:intervals){
+            if(ans.empty() || ans.back()[1]<inter[0]){
+                ans.push_back(inter);
+            }
+            else{
+                ans.back()[1]=max(ans.back()[1],inter[1]);
+            }
+        }
+        return ans;
+    }
+};
+
+
+
+
+// Duplicate number 
+
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        int slow=nums[0];
+        int fast=nums[0];
+        do{
+            slow=nums[slow];
+            fast=nums[nums[fast]];
+        } while(slow!=fast);
+        slow=nums[0];
+        while(slow!=fast){
+            slow=nums[slow];
+            fast=nums[fast];
+        }
+        return fast;
+    }
+};
+
+
+
+
+
+
+
+

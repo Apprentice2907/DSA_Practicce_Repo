@@ -38,7 +38,7 @@ public:
         if(sq-sum>=50) return true;
         return false;
     }
-};©leetcode
+}
 
 
 
