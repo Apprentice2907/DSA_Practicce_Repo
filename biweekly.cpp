@@ -72,4 +72,26 @@ public:
         }
         return sum+mini-smin;
     }
+}
+
+
+
+
+
+
+
+
+class Solution {
+public:
+    long long maxSum(vector<int>& nums, int k, int mul) {
+        sort(nums.begin(),nums.end(), greater<int>());
+        long long ans=0;
+        long long curr=mul;
+        for(int i=0;i<k;i++){
+            if(curr>1) ans=ans+(long long)nums[i]*curr;
+            else ans=ans+nums[i];
+            curr=curr-1;
+        }
+        return ans;
+    }
 };©leetcode
