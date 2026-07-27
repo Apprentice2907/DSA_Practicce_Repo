@@ -52,3 +52,22 @@ int main() {
 
     for (int idx : res) cout << idx << " ";
 }
+
+
+
+
+
+
+
+
+vector<tuple<int,int,int>> meetings;
+
+for(int i=0;i<start.size();i++){
+    meetings.push_back({i+1,start[i],end[i]});
+}
+
+sort(meetings[2].begin(),meetings[2].end);
+
+for(auto item:meetings){
+    if(meetings[2]>)
+}
